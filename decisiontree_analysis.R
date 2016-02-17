@@ -1,4 +1,4 @@
-setwd("/Users/knguyen1/Documents/InnocentiveDataChallenge")
+setwd("/Users/knguyen1/Documents/InnocentiveDataChallenge/Innocentive-Data-Challenge-Project")
 library(readr)
 library(xgboost)
 library(rpart)
@@ -36,7 +36,7 @@ train$y = train$y/max(train$y)
 test$y = test$y/max(test$y)
 
 #DecisionTree classifier
-ClinicalTree = rpart(Score ~. -dataset, data=train, method="class", minbucket=25)
+ClinicalTree = rpart(Score ~., data=train, method="class", minbucket=25)
 prp(ClinicalTree)
 cat("making predictions\n")
 
